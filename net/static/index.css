@@ -1,0 +1,147 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-style: normal;
+}
+.title-text {
+    font-family: "Danfo", serif;
+    font-optical-sizing: auto;
+    font-size: 64px;
+    font-style: normal;
+    font-variation-settings: "ELSH" 0;
+    text-decoration: none;
+    align-content: center;
+}
+#header-container .title-text {
+    color: #533d2c;
+}
+.body {
+    width: 100%;
+}
+.container {
+    width: 100%;
+    display: flex;
+}
+.container-text {
+    font-size: 28px;
+}
+#header-container {
+    height: 15vh;
+    background-color: rgba(176, 138, 81, 0.5);
+    justify-content: center;
+}
+#main-container {
+    height: 100vh;
+    padding: 20px 40px;
+    justify-content: space-between;
+    background-color: whitesmoke;
+}
+#main-container > .container {
+    gap: 20px;
+    flex-direction: column;
+    height: 100%;
+}
+.outer {
+    border-radius: 10px;
+    box-shadow: 0 0 10px #979393;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#upload {
+    width: 100%;
+}
+#upload .outer {
+    background-color: #CAC4C4;
+}
+.inner {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    width: 80%;
+    height: 90%;
+    justify-content: center;
+}
+#upload .inner {
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+#upload .inner>form {
+    width: fit-content;
+}
+#upload .inner>div {
+    width: fit-content;
+    max-width: 60%;
+    height: fit-content;
+    max-height: 80%;
+}
+#footer-container {
+    height: 25vh;
+    background-color: #8f8e8e;
+    justify-content: center;
+}
+#footer-container .title-text {
+    font-size: 50px;
+    color: #e0e0e0;
+}
+#upload-btn {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    width: 50%;
+    height: 40%;
+    font-size: 20px;
+}
+#upload-form {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(240 214 214 / 28%);
+    width: 70%;
+    height: 35%;
+    font-size: 20px;
+}
+#upload-input {
+    width: 80%;
+    flex-direction: column;
+}
+#pokemon-card {
+    padding: 10px;
+    width: fit-content;
+    height: 50%;
+    border-radius: 10px;
+    background-color: rgb(251 232 175 / 28%);
+    align-items: center;
+    gap: 10px;
+}
+#image {
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+#image img {
+    width: auto;
+}
+#prediction {
+    flex-wrap: wrap;
+    width: fit-content;
+    height: 100%;
+    gap: 15px;
+}
+#prediction .container {
+    padding: 2%;
+    height: fit-content;
+    width: fit-content;
+    background-color: #ffffffd6;
+    border-radius: 10px;
+    flex-direction: column;
+}
+#prediction .container span {
+    font-size: smaller;
+}
