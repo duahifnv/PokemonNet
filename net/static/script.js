@@ -8,20 +8,38 @@ form.addEventListener('submit', async (e) => {
 
     formData.append('file', input.files[0]);
 
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then((response) => {
-            if (response.ok) {
-                console.log('Изображение успешно загружено на сервер');
-            }
-            else {
-                console.error('Произошла ошибка при загрузке изображения');
-            }
-        }).then(window.location.href = '/upload');
-    }
-    catch (err) {
-        console.error(err);
-    }
+    cacheImage(input.files[0]);
+    const post = await fetch(url, {
+        method: 'POST',
+        body: formData
+    }).then((response) => {
+        if (!response.ok) {
+            console.error('Ошибка POST');
+        }
+    }).catch(error => {
+        throw error;
+    });
+    window.location.href = '/upload';
+    /*const get = await fetch('/upload')
+        .then((response) => {
+        if (response.ok) {
+            window.location.href = '/upload';
+        }
+        else {
+            console.error('Ошибка GET');
+        }
+        })
+        .catch(error => {
+            throw error;
+        });*/
 });
+
+function cacheImage(file) {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        localStorage.setItem('image', reader.result);
+    }, false);
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
