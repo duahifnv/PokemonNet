@@ -68,8 +68,9 @@
     justify-content: center;
 }
 #upload .inner {
-    width: 90%;
+    width: 95%;
     justify-content: space-around;
+    gap: 10px;
     align-items: center;
 }
 #upload .inner>form {
@@ -120,12 +121,21 @@
     align-items: center;
     gap: 10px;
 }
-#image {
-    justify-content: center;
+#image-card {
+    flex-direction: column;
     width: 30%;
+}
+#image-card label {
+    text-align: center;
+    font-size: larger;
+    color: #613900;
+}
+#image-container {
+    justify-content: center;
+    width: 100%;
     height: 100%;
 }
-#image img {
+#image {
     width: auto;
 }
 #prediction {
