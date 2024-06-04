@@ -34,8 +34,16 @@
                             </button>
                         </form>
                         <div class="container" id="pokemon-card">
-                            <div class="container" id="image">
-                                <img src="../static/uploads/abomasnow.png" alt="abomasnow.png">
+                            <div class="container" id="image-card">
+                                <label for="image">{{label}}</label>
+                                <div class="container" id="image-container">
+                                    <img src="" alt="pokemon.png" id="image">
+                                    <script>
+                                        let img = document.getElementById('image');
+                                        img.src = localStorage.getItem('image');
+                                        console.log(img.src);
+                                    </script>
+                                </div>
                             </div>
                             <div class="container" id="prediction">
                                 <div class="container" id="generation">
