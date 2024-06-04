@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&family=Montserrat+Alternates:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>PokemonNet</title>
+</head>
+<body>
+    <header>
+        <div class="container" id="header-container">
+            <a class="title-text">
+                POKEMONNET
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="container" id="main-container">
+            <div class="container" id="upload">
+                <span class="container-text">
+                    Узнай тип покемона
+                </span>
+                <div class="container outer">
+                    <div class="container inner">
+                        <form class="container" action="/" name="upload"
+                              method="post" enctype="multipart/form-data"
+                            id="upload-form">
+                            <input type="file" class="container" id="upload-input" accept="image/png, image/jpeg" />
+                            <button class="container inner" type="submit" id="upload-btn">
+                                Загрузить изображение
+                            </button>
+                        </form>
+                        <div class="container" id="pokemon-card">
+                            <div class="container" id="image">
+                                <img src="../static/uploads/abomasnow.png" alt="abomasnow.png">
+                            </div>
+                            <div class="container" id="prediction">
+                                <div class="container" id="generation">
+                                    <label for="generation">
+                                        Поколение
+                                    </label>
+                                    {% for key in generation %}
+                                        <span>{{key}}: {{generation[key]}}%</span>
+                                    {% endfor %}
+                                </div>
+                                <div class="container" id="type1">
+                                    <label for="type1">
+                                        Первичный тип
+                                    </label>
+                                    {% for key in type1 %}
+                                        <span>{{key}}: {{type1[key]}}%</span>
+                                    {% endfor %}
+                                </div>
+                                <div class="container" id="type2">
+                                    <label for="generation">
+                                        Вторичный тип
+                                    </label>
+                                    {% for key in type2 %}
+                                        <span>{{key}}: {{type2[key]}}%</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container" id="footer-container">
+            <a href="https://donstu.ru" class="title-text">
+                Project for DSTU. 2024.
+            </a>
+        </div>
+    </footer>
+    <script src="../static/script.js"></script>
+</body>
+</html>
