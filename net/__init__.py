@@ -1,7 +1,8 @@
 import json
 from urllib import request
 
-from flask import Flask, flash, request, redirect, render_template, url_for, Response
+import requests
+from flask import Flask, flash, request, redirect, render_template, url_for, Response, send_file
 from werkzeug.utils import secure_filename
 
 import net.predict
@@ -16,6 +17,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 OUTPUT_SIZE = 3
 
+
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -24,6 +26,13 @@ def allowed_file(filename):
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+
+
+@app.route('/get_asset', methods=['POST'])
+def send_assets():
+    image_name = request.data.decode('utf-8')
+    filename = os.path.join('assets', image_name + '.png')
+    return send_file(filename, mimetype='image/*')
 
 
 @app.route('/', methods=['POST'])
@@ -56,6 +65,7 @@ def process_file():
         with open('predictions/predictions.txt', 'w') as f:
             f.write(str(result))
         return Response(status=200)
+
 
 @app.route('/upload', methods=['GET'])
 def show_predict():
