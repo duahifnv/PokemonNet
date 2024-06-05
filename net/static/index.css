@@ -23,23 +23,48 @@
 .body {
     width: 100%;
 }
+
 .container {
     width: 100%;
     display: flex;
 }
 .container-text {
-    font-size: 28px;
+    font-size: 40px;
+    color: rgb(149 139 125);
+    text-align: center;
 }
 #header-container {
     height: 15vh;
     background-color: rgba(176, 138, 81, 0.5);
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-block {
+    width: 12%;
+    height: fit-content;
+    align-content: center;
+}
+.nav-block #github-container {
+    width: 40%;
+}
+.nav-block #kaggle-container {
+    width: 100%;
+}
+.nav-block img {
+    max-width: 80%;
+    height: auto;
 }
 #main-container {
     height: 100vh;
     padding: 20px 40px;
     justify-content: space-between;
-    background-color: whitesmoke;
+    background: repeating-linear-gradient(
+      45deg,
+      #ffffff,
+      #ffffff 10px,
+      #fff6ec 10px,
+      #fffaf4 20px
+    );
 }
 #main-container > .container {
     gap: 20px;
