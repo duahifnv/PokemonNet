@@ -1,6 +1,3 @@
-import enum
-import json
-
 import matplotlib.image as mpimg
 import numpy as np
 import tensorflow as tf
